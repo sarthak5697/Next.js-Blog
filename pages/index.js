@@ -1,18 +1,19 @@
-import Head from 'next/head';
-import Image from 'next/Image';
-import styles from '../styles/Home.module.css';
-import Header from '../components/header.js';
-import Footer from '../components/footer';
+import Head from "next/head";
+import Image from "next/Image";
+import Format from "../layout/format";
 
+//Components imports
 
+import Section1 from "../components/section1.js";
 
 export default function Home() {
   return (
     <div>
-      <Header>
-        </Header>
-        <main>Main Content Display Here</main>
-        <Footer></Footer>
-      </div>
-  )
+      <Format>
+       <Section1>
+        
+       </Section1>
+      </Format>
+    </div>
+  );
 }
