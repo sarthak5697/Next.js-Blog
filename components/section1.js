@@ -11,7 +11,7 @@ import "swiper/css";
 function section1() {
     SwiperCore.use([Autoplay]);
   const bg = {
-    background: "url('/images/illustrations/pic1.png')no-repeat",
+    background: "url('/images/illustrations')no-repeat",
     backgroundPosition: "right",
   };
 
@@ -57,7 +57,7 @@ function Slide() {
             </a>
           </Link>
           <Link href={"/"}>
-            <a className="text-grey-800 hover:text-grey-600">-3 July 2022</a>
+            <a className="text-gray-800 hover:text-gray-600">-3 July 2022</a>
           </Link>
         </div>
         <div className="title">
@@ -72,10 +72,7 @@ function Slide() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
-        </p>
+          </p>
         <Author></Author>
       </div>
     </div>
