@@ -2,14 +2,37 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Author from "./_child/author";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore,{Autoplay} from 'swiper';
+
+//Swiper Styles
+import "swiper/css";
 
 function section1() {
+    SwiperCore.use([Autoplay]);
+  const bg = {
+    background: "url('/images/illustrations/pic1.png')no-repeat",
+    backgroundPosition: "right",
+  };
+
   return (
-    <section className="py-16">
+    <section className="py-16" style={bg}>
       <div className="container mx-auto md:px-20">
         <h1 className="font-bold text-1xl pb-12 text-center">
           Trending
-          {Slide()}
+          <Swiper
+            loop={true}
+            slidesPerView={1}
+            autoplay={{
+                delay:2000
+            }}
+          >
+            <SwiperSlide> {Slide()}</SwiperSlide>
+            <SwiperSlide> {Slide()}</SwiperSlide>
+            <SwiperSlide> {Slide()}</SwiperSlide>
+            <SwiperSlide> {Slide()}</SwiperSlide>
+            ...
+          </Swiper>
         </h1>
       </div>
     </section>
