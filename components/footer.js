@@ -6,9 +6,9 @@ import Newsletter from "./_child/newsletter.js";
 function footer() {
 
   const bg = {
-      backgroundImage : "url('/images/footer.png')",
-      backgroundRepeat : 'no-repeat',
-      backgroundPosition : "bottom left"
+      backgroundImage : "url('/images/Rectangle 22.png')",
+      backgroundRepeat : 'repeat',
+      // backgroundPosition : "bottom left"
   }
   return (
         <footer className="bg-gray-50" style={bg}>
