@@ -4,11 +4,17 @@ import Link from "next/link";
 import Author from "./_child/author";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore,{Autoplay} from 'swiper';
+import fetcher from "../lib/fetcher";
+import Spinner from "./_child/spinner";
+import Error from "next/error";
 
 //Swiper Styles
 import "swiper/css";
 
 function section1() {
+  const { data, isLoading, isError } = fetcher("api/posts");
+  if (isLoading) return <Spinner></Spinner>;
+  if (isError) return <Error></Error>;
     SwiperCore.use([Autoplay]);
   const bg = {
     background: "url('/images/illustrations')no-repeat",
@@ -21,16 +27,21 @@ function section1() {
         <h1 className="font-bold text-1xl pb-12 text-center">
           Trending
           <Swiper
-            loop={true}
+           // loop={true}
             slidesPerView={1}
-            autoplay={{
-                delay:2000
-            }}
+            //autoplay={{
+               // delay:2000
+            //}}
           >
-            <SwiperSlide> {Slide()}</SwiperSlide>
-            <SwiperSlide> {Slide()}</SwiperSlide>
-            <SwiperSlide> {Slide()}</SwiperSlide>
-            <SwiperSlide> {Slide()}</SwiperSlide>
+            {
+              data.map((value,index)=>(
+                <SwiperSlide key={index}>
+                  <Slide data={value}>
+
+                  </Slide>
+                </SwiperSlide>
+              ))
+            }
             ...
           </Swiper>
         </h1>
@@ -40,12 +51,15 @@ function section1() {
 }
 
 function Slide() {
+
+  const { id, title, subtitle, category, img, published, author, designation } = data ;
+
   return (
     <div className="grid md:grid-cols-2">
       <div className="image">
         <Link href="/">
           <a>
-            <Image src={"/images/bg1.jpg"} width={600} height={600} />
+            <Image src={ img||"/"} width={600} height={600} />
           </a>
         </Link>
       </div>
@@ -53,7 +67,7 @@ function Slide() {
         <div className="cat">
           <Link href={"/"}>
             <a className="text-orange-600 hover:text-orange-800">
-              Business , Travel
+              {category||"Unknown"}
             </a>
           </Link>
           <Link href={"/"}>

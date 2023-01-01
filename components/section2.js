@@ -1,30 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
 import Author from "./_child/author";
-
-import getPost from "../lib/helper.js";
 import fetcher from "../lib/fetcher";
+import Spinner from "./_child/spinner";
+import Error from "next/error";
 
 export default function section2() {
   const { data, isLoading, isError } = fetcher("api/posts");
-
-  if (data) console.log(data);
+  if (isLoading) return <Spinner></Spinner>;
+  if (isError) return <Error></Error>;
   // getPost(4).then(res=>console.log(res));
   return (
     <section className="container mx-auto md:px-20 py-10">
       <h1 className="font-bold text-4xl py-12 text-center">Latest Post</h1>
-      {/* Grid column */}
+      {/* Grid column  */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-14">
-        {data.map((value, index) => (
-          <Post data={value} key={index}></Post>
+        {data.map((value, id) => (
+          <Post data={value} key={id}></Post>
         ))}
       </div>
     </section>
-  )
+  );
 }
 
 function Post({ data }) {
-  const { id, title, subtitle, category, img, published, author } = data;
+  const { id, title, subtitle, category, img, published, author, designation } = data;
   return (
     <div className="item">
       <div className="images">
