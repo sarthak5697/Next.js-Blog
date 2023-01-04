@@ -14,7 +14,7 @@ export default {
       published: "Jun 3,  2022",
       author: {
         name: "Flying High",
-        img: "/images/author/author1.png",
+        img: "/images/author1.png",
         designation: "CEO and Founder",
       },
     },
@@ -292,7 +292,7 @@ export default {
       subtitle:
         "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
       category: "Business, Travel",
-      img: "/images/articles/img1.jpg",
+      img: "/images/img1.jpg",
       description: `
             Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
             far World of Grammar.
@@ -300,7 +300,7 @@ export default {
       published: "Jun 3,  2022",
       author: {
         name: "Flying High",
-        img: "/images/author/author7.png",
+        img: "/images/author/author2.png",
         designation: "CEO and Founder",
       },
     },
@@ -310,7 +310,7 @@ export default {
       subtitle:
         "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
       category: "Business, Travel",
-      img: "/images/articles/img2.jpg",
+      img: "/images/img2.jpg",
       description: `
             Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
             far World of Grammar.
@@ -328,7 +328,7 @@ export default {
       subtitle:
         "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
       category: "Business, Travel",
-      img: "/images/articles/img3.jpg",
+      img: "/images/img3.jpg",
       description: `
             Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
             far World of Grammar.
@@ -346,7 +346,7 @@ export default {
       subtitle:
         "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
       category: "Business, Travel",
-      img: "/images/articles/img4.jpg",
+      img: "/images/img4.jpg",
       description: `
             Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
             far World of Grammar.
@@ -354,7 +354,7 @@ export default {
       published: "Jun 10,  2022",
       author: {
         name: "Flying High",
-        img: "/images/author/author8.png",
+        img: "/images/author7.png",
         designation: "CEO and Founder",
       },
     },
@@ -364,7 +364,7 @@ export default {
       subtitle:
         "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
       category: "Business, Travel",
-      img: "/images/articles/img5.jpg",
+      img: "/images/img5.jpg",
       description: `
             Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
             far World of Grammar.
@@ -372,7 +372,7 @@ export default {
       published: "Jun 14,  2022",
       author: {
         name: "Flying High",
-        img: "/images/author/author3.png",
+        img: "/images/author3.png",
         designation: "CEO and Founder",
       },
     },

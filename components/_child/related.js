@@ -1,30 +1,41 @@
 import Link from "next/link";
 import Image from "next/image";
 import Author from "./author";
+import fetcher from "../../lib/fetcher";
+import Spinner from "./spinner";
+import Error from "./error";
 
-export default function Related(){
-    return(
-        <section className="pt-20">
-                     <h1 className="font-bold text-3xl py-10">Related</h1>
-                    <div className="flex flex-col gap-10">
-                        {Post()}
-                        {Post()}
-                        {Post()}
-                        {Post()}
-                    </div>
-        </section>
-    )
+export default function Related() {
+  const { data, isLoading, isError } = fetcher("api/posts");
+  if (isLoading) return <Spinner></Spinner>;
+  if (isError) return <Error></Error>;
+  return (
+    <section className="pt-20">
+      <h1 className="font-bold text-3xl py-10">Related</h1>
+      <div className="flex flex-col gap-10">
+       {
+        data.map((value,index)=>(
+          <Post key={index} data={value}>
+
+          </Post>
+        ))
+       }
+      </div>
+    </section>
+  );
 }
 
-function Post(){
-    return(
-        <div className="flex gap-5">
-            <div className="image flex flex-col justify-start">
-        <Link href="/">
+function Post({ data }) {
+  const { id, title, category, img, published, author } = data;
+
+  return (
+    <div className="flex gap-5">
+      <div className="image flex flex-col justify-start">
+        <Link href={`/posts/${id}`}>
           <a>
             <Image
               className="rounded"
-              src={"/images/bg3.jpg"}
+              src={img || ""}
               width={300}
               height={200}
             />
@@ -33,24 +44,26 @@ function Post(){
       </div>
       <div className="info flex justify-center flex-col">
         <div className="cat">
-          <Link href={"/"}>
+          <Link href={`/posts/${id}`}>
             <a className="text-orange-600 hover:text-orange-800">
-              Business , Travel
+              {category || "No Category"}
             </a>
           </Link>
-          <Link href={"/"}>
-            <a className="text-gray-800 hover:text-gray-600">-3 July 2022</a>
+          <Link href={`/posts/${id}`}>
+            <a className="text-gray-800 hover:text-gray-600">
+              - {published || ""}
+            </a>
           </Link>
         </div>
         <div className="title">
-          <Link href={"/"}>
+          <Link href={`/posts/${id}`}>
             <a className="text-xl font-bold text-gray-800 hover:text-gray-600">
-              Your most unhappy customers are your greatest source of learning
+              {title || "No Title"}
             </a>
           </Link>
         </div>
-        <Author></Author>
+        {author ? <Author></Author> : <></>}
       </div>
-        </div>
-    )
+    </div>
+  );
 }
