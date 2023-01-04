@@ -6,13 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore,{Autoplay} from 'swiper';
 import fetcher from "../lib/fetcher";
 import Spinner from "./_child/spinner";
-import Error from "next/error";
+import Error from "./_child/error";
 
 //Swiper Styles
 import "swiper/css";
 
 function section1() {
-  const { data, isLoading, isError } = fetcher("api/posts");
+  const { data, isLoading, isError } = fetcher("api/trending");
   if (isLoading) return <Spinner></Spinner>;
   if (isError) return <Error></Error>;
     SwiperCore.use([Autoplay]);
@@ -28,10 +28,10 @@ function section1() {
           Trending
           <Swiper
            // loop={true}
-            slidesPerView={1}
             //autoplay={{
                // delay:2000
             //}}
+            slidesPerView={1}
           >
             {
               data.map((value,index)=>(
@@ -50,9 +50,9 @@ function section1() {
   );
 }
 
-function Slide() {
+function Slide({data}) {
 
-  const { id, title, subtitle, category, img, published, author, designation } = data ;
+  const { id, title,category, img, published, author, description } = data ;
 
   return (
     <div className="grid md:grid-cols-2">
@@ -71,22 +71,20 @@ function Slide() {
             </a>
           </Link>
           <Link href={"/"}>
-            <a className="text-gray-800 hover:text-gray-600">-3 July 2022</a>
+            <a className="text-gray-800 hover:text-gray-600">-{published||"Unknown"}</a>
           </Link>
         </div>
         <div className="title">
           <Link href={"/"}>
             <a className="text-3xl md:text-6xl font-bold text-gray-800 hover:text-gray-600">
-              Your most unhappy customers are your greatest source of learning
+              {title||"Unknown"}
             </a>
           </Link>
         </div>
         <p className="text-gray-500 py-3">
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          {description||"description"}
           </p>
-        <Author></Author>
+          {author ? <Author></Author> : <></>}
       </div>
     </div>
   );

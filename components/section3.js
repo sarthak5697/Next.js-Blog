@@ -4,34 +4,38 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 import Author from "./_child/author";
 import Link from "next/link";
+import fetcher from "../lib/fetcher";
+import Spinner from "./_child/spinner";
+import Error from "./_child/error";
 
 function section3() {
+  const { data, isLoading, isError } = fetcher("api/popular");
+  if (isLoading) return <Spinner></Spinner>;
+  if (isError) return <Error></Error>;
   return (
     <section className="container mx-auto md:px-20 py-16">
       <h1 className="font-bold text-4xl py-12 text-center">Most Popular</h1>
       {/* swiper carousel */}
       <Swiper slidesPerView={2}>
-        <SwiperSlide>{Post()}</SwiperSlide>
-        <SwiperSlide>{Post()}</SwiperSlide>
-        <SwiperSlide>{Post()}</SwiperSlide>
-        <SwiperSlide>{Post()}</SwiperSlide>
-        <SwiperSlide>{Post()}</SwiperSlide>
+        {data.map((value, index) => (
+          <SwiperSlide key={index}>
+            <Post data={value}></Post>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
   );
 }
 
-function Post() {
+function Post({ data }) {
+  const { id, title, category, img, published, author, description } = data;
+
   return (
-    <div className="grif">
+    <div className="grid">
       <div className="images">
         <Link href="/">
           <a>
-            <Image
-              src={"/images/bg2.jpg"}
-              width={600}
-              height={400}
-            />
+            <Image src={img || ""} width={600} height={400} />
           </a>
         </Link>
       </div>
@@ -39,29 +43,26 @@ function Post() {
         <div className="cat">
           <Link href={"/"}>
             <a className="text-orange-600 hover:text-orange-800">
-              Business , Travel
+              {category || "Unknown"}{" "}
             </a>
           </Link>
           <Link href={"/"}>
-            <a className="text-gray-800 hover:text-gray-600">-3 July 2022</a>
+            <a className="text-gray-800 hover:text-gray-600">
+              -{published || "Unknown"}
+            </a>
           </Link>
         </div>
         <div className="title">
           <Link href={"/"}>
             <a className="text-3xl md:text-4xl font-bold text-gray-800 hover:text-gray-600">
-              Your most unhappy customers are your greatest source of learning
+              {title || "Unknown"}
             </a>
           </Link>
         </div>
-        <p className="text-gray-500 py-3">
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-        </p>
+        <p className="text-gray-500 py-3">{description || "description"}</p>
       </div>
 
-      <Author></Author>
+      {author ? <Author></Author> : <></>}
     </div>
   );
 }
