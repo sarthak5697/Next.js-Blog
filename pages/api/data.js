@@ -32,7 +32,7 @@ export default {
       published: "Jun 5,  2022",
       author: {
         name: "Mayank Kumar",
-        img: "/images/author/author2.png",
+        img: "/images/author2.png",
         designation: "CEO and Founder",
       },
     },
@@ -50,7 +50,7 @@ export default {
       published: "Jun 7,  2022",
       author: {
         name: "Sarthak Nawaria",
-        img: "/images/author/author3.png",
+        img: "/images/author3.png",
         designation: "CEO and Founder",
       },
     },
@@ -68,7 +68,7 @@ export default {
       published: "Jun 10,  2022",
       author: {
         name: "Mahesh",
-        img: "/images/author/author4.png",
+        img: "/images/author4.png",
         designation: "CEO and Founder",
       },
     },
@@ -86,7 +86,7 @@ export default {
       published: "Jun 14,  2022",
       author: {
         name: "Jatin",
-        img: "/images/author/author5.png",
+        img: "/images/author5.png",
         designation: "CEO and Founder",
       },
     },
@@ -152,7 +152,7 @@ export default {
       published: "Jun 5,  2022",
       author: {
         name: "Abhishek",
-        img: "/images/author/author7.png",
+        img: "/images/author7.png",
         designation: "CEO and Founder",
       },
     },
@@ -184,7 +184,7 @@ export default {
       published: "Jun 7,  2022",
       author: {
         name: "Sidhant",
-        img: "/images/author/author8.png",
+        img: "/images/author2.png",
         designation: "CEO and Founder",
       },
     },
@@ -216,7 +216,7 @@ export default {
       published: "Jun 10,  2022",
       author: {
         name: "Mohit",
-        img: "/images/author/author1.png",
+        img: "/images/author1.png",
         designation: "CEO and Founder",
       },
     },
@@ -248,7 +248,7 @@ export default {
       published: "Jun 14,  2022",
       author: {
         name: "Manish",
-        img: "/images/author/author3.png",
+        img: "/images/author3.png",
         designation: "CEO and Founder",
       },
     },
@@ -280,7 +280,7 @@ export default {
       published: "Jun 5,  2022",
       author: {
         name: "Piyush",
-        img: "/images/author/author5.png",
+        img: "/images/author5.png",
         designation: "CEO and Founder",
       },
     },
@@ -300,7 +300,7 @@ export default {
       published: "Jun 3,  2022",
       author: {
         name: "Aman",
-        img: "/images/author/author2.png",
+        img: "/images/author2.png",
         designation: "CEO and Founder",
       },
     },
@@ -318,7 +318,7 @@ export default {
       published: "Jun 5,  2022",
       author: {
         name: "Mridul",
-        img: "/images/author/author2.png",
+        img: "/images/author2.png",
         designation: "CEO and Founder",
       },
     },
@@ -336,7 +336,7 @@ export default {
       published: "Jun 7,  2022",
       author: {
         name: "Paras",
-        img: "/images/author/author6.png",
+        img: "/images/author6.png",
         designation: "CEO and Founder",
       },
     },
