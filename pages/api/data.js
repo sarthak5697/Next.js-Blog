@@ -55,15 +55,13 @@ export default {
     },
     {
       id: 4,
-      title: "Your most unhappy customers are your greatest source of learning",
+      title: "43 Best travel apps in 2023 for iPhone and Android",
       subtitle:
         "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
       category: "Business, Travel",
       img: "/images/img4.jpg",
       description: `
-            Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind 
-            text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
-            `,
+      Covering everything from the basics, such as cheap flights, money exchange and hotel bookings, to improving your experience with stargazing, making new friends, saving money and even finding discount food, these best travel apps will help make your next trip even better.`,
       published: "Jun 10,  2022",
       author: {
         name: "Mahesh",
@@ -73,15 +71,13 @@ export default {
     },
     {
       id: 5,
-      title: "Your most unhappy customers are your greatest source of learning",
+      title: "7 Lucky Charms to Have In Your Home",
       subtitle:
         "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
       category: "Business, Travel",
       img: "/images/img5.jpg",
       description: `
-            Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind 
-            text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
-            `,
+      Throughout the World, there are many different cultural traditions and superstitions. Many objects in the form of lucky charms are believed to bring good luck, prosperity, and protection to a home. They have been used for centuries in many different cultures and societies as a way to bring good fortune and protect against negative energies or events.`,
       published: "Jun 14,  2022",
       author: {
         name: "Jatin",
