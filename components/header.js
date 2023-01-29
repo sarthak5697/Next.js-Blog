@@ -4,16 +4,13 @@ import Link from "next/link";
 function header() {
   return (
     <header className="bg-black-500">
-      <div
-        className="xl:container xl:mx-auto flex flex-col items-center sm:flex-row
-        sm:justify-between text-center"
-      >
+      <div className="xl:container xl:mx-auto flex flex-col items-center sm:flex-row sm:justify-between text-center">
         <div className="md:flex-none w-96 order-2 sm:order-1 flex justify-center py-4 sm:py-0">
           <input type="text" className="input-text" placeholder="Search..." />
         </div>
         <div className="shrink w-80 sm:order-2">
           <Link href={"/"}>
-            <a className="font-bold uppercase text-4xl">H O M E</a>
+            <a className="font-bold uppercase text-6xl">H O M E</a>
           </Link>
         </div>
         <div className="w-96 order-3 flex justify-center">
