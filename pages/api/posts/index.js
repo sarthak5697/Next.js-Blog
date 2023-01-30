@@ -1,4 +1,6 @@
 import data from '../data';
+import Image from "next/Image";
+
 
 export default function handler(req,res){
     const {Posts} = data;

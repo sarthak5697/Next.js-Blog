@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/Image";
 import Format from "../layout/format";
 
 //Components imports
